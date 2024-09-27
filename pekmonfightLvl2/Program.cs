@@ -1,4 +1,9 @@
-﻿Console.WriteLine("Welcome to pekmon fight!");
+﻿
+string gamerestart = "yes";
+while (gamerestart == "yes")
+{
+Console.Clear();
+Console.WriteLine("Welcome to pekmon fight!");
 Console.WriteLine("Write your pekmon:");
 string HeroName = Console.ReadLine();
 // -----------------------------------------------------------
@@ -13,13 +18,28 @@ while (HeroName.Length == 0 || HeroName.Length > 12)
     else if (HeroName.Length > 12)
     {
         Console.Clear();
-        Console.WriteLine("max 20 characters dumbass");
+        Console.WriteLine("max 12 characters dumbass");
         HeroName = Console.ReadLine();
     }
 }
 // --------------------------------------------------------
 Console.Clear();
-Console.WriteLine($"U use {HeroName}!");
+Console.WriteLine($"ight well too bad u get Pikachu!");
+Console.WriteLine("""
+       \:.             .:/
+        \``._________.''/ 
+         \             / 
+ .--.--, / .':.   .':. \
+/__:  /  | '::' . '::' |
+   / /   |`.   ._.   .'|
+  / /    |.'         '.|
+ /___-_-,|.\  \   /  /.|
+      // |''\.;   ;,/ '|
+      `==|:=         =:|
+         `.          .'
+           :-._____.-:
+          `''       `''
+""");
 Console.ReadKey();
 // ----------------------------------------------------------
 Console.WriteLine("Write enemy pekmon:");
@@ -36,11 +56,91 @@ while (VillainName.Length == 0 || VillainName.Length > 12)
     else if (VillainName.Length > 12)
     {
         Console.Clear();
-        Console.WriteLine("max 20 characters dumbass");
+        Console.WriteLine("max 12 characters dumbass");
         VillainName = Console.ReadLine();
+    }
+    else if (VillainName == "Charmander")
+    {
+        Console.Clear();
+        Console.WriteLine("Enemy uses Charmander!");
+        Console.WriteLine(""" 
+              _.--""`-..
+            ,'          `.
+          ,'          __  `.
+         /|          " __   \
+        , |           / |.   .
+        |,'          !_.'|   |
+      ,'             '   |   |
+     /              |`--'|   |
+    |                `---'   |
+     .   ,                   |                       ,".
+      ._     '           _'  |                    , ' \ `
+  `.. `.`-...___,...---""    |       __,.        ,`"   L,|
+  |, `- .`._        _,-,.'   .  __.-'-. /        .   ,    \
+-:..     `. `-..--_.,.<       `"      / `.        `-/ |   .
+  `,         "" "'     `.              ,'         |   |  ',,
+    `.      '            '            /          '    |'. |/
+      `.   |              \       _,-'           |       ''
+        `._'               \   '"\                .      |
+           |                '     \                `._  ,'
+           |                 '     \                 .'|
+           |                 .      \                | |
+           |                 |       L              ,' |
+           `                 |       |             /   '
+            \                |       |           ,'   /
+          ,' \               |  _.._ ,-..___,..-'    ,'
+         /     .             .      `!             ,j'
+        /       `.          /        .           .'/
+       .          `.       /         |        _.'.'
+        `.          7`'---'          |------"'_.'
+       _,.`,_     _'                ,''-----"'
+   _,-_    '       `.     .'      ,\
+   -" /`.         _,'     | _  _  _.|
+    ""--'---"" ""'        `' '! |! /
+                            `" " -' 
+""");
     }
 }
 // ----------------------------------------------
+Console.Clear();
+Console.WriteLine($"ight well too bad, enemy uses Charmander!");
+Console.WriteLine(""" 
+              _.--""`-..
+            ,'          `.
+          ,'          __  `.
+         /|          " __   \
+        , |           / |.   .
+        |,'          !_.'|   |
+      ,'             '   |   |
+     /              |`--'|   |
+    |                `---'   |
+     .   ,                   |                       ,".
+      ._     '           _'  |                    , ' \ `
+  `.. `.`-...___,...---""    |       __,.        ,`"   L,|
+  |, `- .`._        _,-,.'   .  __.-'-. /        .   ,    \
+-:..     `. `-..--_.,.<       `"      / `.        `-/ |   .
+  `,         "" "'     `.              ,'         |   |  ',,
+    `.      '            '            /          '    |'. |/
+      `.   |              \       _,-'           |       ''
+        `._'               \   '"\                .      |
+           |                '     \                `._  ,'
+           |                 '     \                 .'|
+           |                 .      \                | |
+           |                 |       L              ,' |
+           `                 |       |             /   '
+            \                |       |           ,'   /
+          ,' \               |  _.._ ,-..___,..-'    ,'
+         /     .             .      `!             ,j'
+        /       `.          /        .           .'/
+       .          `.       /         |        _.'.'
+        `.          7`'---'          |------"'_.'
+       _,.`,_     _'                ,''-----"'
+   _,-_    '       `.     .'      ,\
+   -" /`.         _,'     | _  _  _.|
+    ""--'---"" ""'        `' '! |! /
+                            `" " -' 
+""");
+
 int HeroHp = 100;
 int VillainHp = 100;
 
@@ -50,7 +150,7 @@ Random generator = new Random();
 Console.Clear();
 Console.WriteLine("Why so solemn?");
 Console.ReadKey();
-Console.WriteLine($"{HeroName}: {HeroHp} {VillainName}: {VillainHp}");
+Console.WriteLine($" Pikachu: {HeroHp} Charmander: {VillainHp}");
 Console.ReadKey();
 while (HeroHp > 0 && VillainHp > 0)
 {
@@ -58,14 +158,14 @@ while (HeroHp > 0 && VillainHp > 0)
     int HeroDamage = generator.Next(20);
     VillainHp -= HeroDamage;
     VillainHp = Math.Max(0, VillainHp);
-    Console.WriteLine($"{HeroName} deals {HeroDamage} damage to {VillainName}.");
+    Console.WriteLine($" Pikachu deals {HeroDamage} damage to Charmander.");
 
     int VillainDamage = generator.Next(20);
     HeroHp -= VillainDamage;
     HeroHp = Math.Max(0, HeroHp);
-    Console.WriteLine($"{VillainName} deals {VillainDamage} damage to {HeroName}.");
+    Console.WriteLine($"Charmander deals {VillainDamage} damage to Pikachu.");
     Console.ReadLine();
-    Console.WriteLine($"{HeroName}: {HeroHp} {VillainName}: {VillainHp}");
+    Console.WriteLine($"Pikachu: {HeroHp} Charmander: {VillainHp}");
 
     Console.WriteLine("Kilck a button to continue.");
     Console.ReadKey();
@@ -80,12 +180,13 @@ if (HeroHp == 0 && VillainHp == 0)
 else if (HeroHp == 0)
 {
     Console.Clear();
-    Console.WriteLine($"{HeroName} WINS");
+    Console.WriteLine($"Pikachu WINS");
 }
 else
 {
     Console.Clear();
-    Console.WriteLine($"{VillainName} WINS");
+    Console.WriteLine($"Charmander WINS");
 }
-Console.WriteLine("Kilck a button to continue.");
-Console.ReadKey();
+Console.WriteLine("Would you like to restart?");
+gamerestart = Console.ReadLine();
+}
