@@ -1,31 +1,30 @@
-﻿
-string gamerestart = "yes";
-while (gamerestart == "yes")
+﻿string gamerestart = "yes";
+while (gamerestart.ToLower() == "yes")
 {
-Console.Clear();
-Console.WriteLine("Welcome to pekmon fight!");
-Console.WriteLine("Write your pekmon:");
-string HeroName = Console.ReadLine();
-// -----------------------------------------------------------
-while (HeroName.Length == 0 || HeroName.Length > 12)
-{
+  Console.Clear();
+  Console.WriteLine("Welcome to pekmon fight!");
+  Console.WriteLine("Write your pekmon:");
+  string HeroName = Console.ReadLine();
+  // -----------------------------------------------------------
+  while (HeroName.Length == 0 || HeroName.Length > 12)
+  {
     if (HeroName.Length == 0)
     {
-        Console.Clear();
-        Console.WriteLine("write a Pekmon dickhead!");
-        HeroName = Console.ReadLine();
+      Console.Clear();
+      Console.WriteLine("write a Pekmon dickhead!");
+      HeroName = Console.ReadLine();
     }
     else if (HeroName.Length > 12)
     {
-        Console.Clear();
-        Console.WriteLine("max 12 characters dumbass");
-        HeroName = Console.ReadLine();
+      Console.Clear();
+      Console.WriteLine("max 12 characters dumbass");
+      HeroName = Console.ReadLine();
     }
-}
-// --------------------------------------------------------
-Console.Clear();
-Console.WriteLine($"ight well too bad u get Pikachu!");
-Console.WriteLine("""
+  }
+  // --------------------------------------------------------
+  Console.Clear();
+  Console.WriteLine($"ight well too bad u get Pikachu!");
+  Console.WriteLine("""
        \:.             .:/
         \``._________.''/ 
          \             / 
@@ -40,30 +39,30 @@ Console.WriteLine("""
            :-._____.-:
           `''       `''
 """);
-Console.ReadKey();
-// ----------------------------------------------------------
-Console.WriteLine("Write enemy pekmon:");
-string VillainName = Console.ReadLine();
+  Console.ReadKey();
+  // ----------------------------------------------------------
+  Console.WriteLine("Write enemy pekmon:");
+  string VillainName = Console.ReadLine();
 
-while (VillainName.Length == 0 || VillainName.Length > 12)
-{
+  while (VillainName.Length == 0 || VillainName.Length > 12)
+  {
     if (VillainName.Length == 0)
     {
-        Console.Clear();
-        Console.WriteLine("write a Pekmon dickhead!");
-        VillainName = Console.ReadLine();
+      Console.Clear();
+      Console.WriteLine("write a Pekmon dickhead!");
+      VillainName = Console.ReadLine();
     }
     else if (VillainName.Length > 12)
     {
-        Console.Clear();
-        Console.WriteLine("max 12 characters dumbass");
-        VillainName = Console.ReadLine();
+      Console.Clear();
+      Console.WriteLine("max 12 characters dumbass");
+      VillainName = Console.ReadLine();
     }
     else if (VillainName == "Charmander")
     {
-        Console.Clear();
-        Console.WriteLine("Enemy uses Charmander!");
-        Console.WriteLine(""" 
+      Console.Clear();
+      Console.WriteLine("Enemy uses Charmander!");
+      Console.WriteLine(""" 
               _.--""`-..
             ,'          `.
           ,'          __  `.
@@ -100,11 +99,11 @@ while (VillainName.Length == 0 || VillainName.Length > 12)
                             `" " -' 
 """);
     }
-}
-// ----------------------------------------------
-Console.Clear();
-Console.WriteLine($"ight well too bad, enemy uses Charmander!");
-Console.WriteLine(""" 
+  }
+  // ----------------------------------------------
+  Console.Clear();
+  Console.WriteLine($"ight well too bad, enemy uses Charmander!");
+  Console.WriteLine(""" 
               _.--""`-..
             ,'          `.
           ,'          __  `.
@@ -141,19 +140,25 @@ Console.WriteLine("""
                             `" " -' 
 """);
 
-int HeroHp = 100;
-int VillainHp = 100;
+  int HeroHp = 100;
+  int VillainHp = 100;
 
 
-Random generator = new Random();
+  Random generator = new Random();
 
-Console.Clear();
-Console.WriteLine("Why so solemn?");
-Console.ReadKey();
-Console.WriteLine($" Pikachu: {HeroHp} Charmander: {VillainHp}");
-Console.ReadKey();
-while (HeroHp > 0 && VillainHp > 0)
+  Console.Clear();
+  Console.WriteLine("You have 10 munny, before every round you can use a the power up (gambling adiction)  to get a chance of getting a more powerful attack against the enemy pekmon. However, there is also a chance that it backfires and ends up hurting your own pekmon. use at your own risk.");
+  Console.ReadKey();
+  Console.WriteLine("Battle commencing!");
+  Console.WriteLine($" Pikachu: {HeroHp} Charmander: {VillainHp}");
+  Console.ReadKey();
+  while (HeroHp > 0 && VillainHp > 0)
+  {
+    ConsoleKey key = Console.ReadKey().Key;
+  if (key == ConsoleKey.Spacebar)
 {
+
+}
     Console.WriteLine("-========NY RUNDA========-");
     int HeroDamage = generator.Next(20);
     VillainHp -= HeroDamage;
@@ -169,24 +174,24 @@ while (HeroHp > 0 && VillainHp > 0)
 
     Console.WriteLine("Kilck a button to continue.");
     Console.ReadKey();
-}
-Console.WriteLine("-=========FIGHT OVER========-");
-Console.ReadKey();
-if (HeroHp == 0 && VillainHp == 0)
-{
+  }
+  Console.WriteLine("-=========FIGHT OVER========-");
+  Console.ReadKey();
+  if (HeroHp == 0 && VillainHp == 0)
+  {
     Console.Clear();
     Console.WriteLine("TIE, NOBODY WINS.");
-}
-else if (HeroHp == 0)
-{
+  }
+  else if (HeroHp == 0)
+  {
     Console.Clear();
     Console.WriteLine($"Pikachu WINS");
-}
-else
-{
+  }
+  else
+  {
     Console.Clear();
     Console.WriteLine($"Charmander WINS");
-}
-Console.WriteLine("Would you like to restart?");
-gamerestart = Console.ReadLine();
+  }
+  Console.WriteLine("Would you like to restart?");
+  gamerestart = Console.ReadLine();
 }
